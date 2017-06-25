@@ -1,0 +1,54 @@
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+<head>
+    <!--Import Google Icon Font-->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+</head>
+<title>
+    Sample
+</title>
+<body>
+<!--Import jQuery before materialize.js-->
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+
+<script>
+    function request() {
+        console.log("start request");
+        $.ajax({
+            type: "GET",
+            url: "https://paqyavtijh.execute-api.ap-northeast-1.amazonaws.com/dev/hello?test=testA",
+            headers: {
+                'Content-Type': 'application/json',
+                'x-api-key': '11111111110000000000',
+            },
+            success: function(response){
+                console.log(response);
+                $("#result").html(response.message);
+
+            },
+            error: function(xhr, textStatus, errorThrown) {
+                console.log("error");
+            }
+        });
+    };
+</script>
+
+<div class="row" style="padding: 5px">
+    <div class="row">
+        <div class="col s4.5">
+            <a class="waves-effect waves-light btn" onclick="request()">開始</a>
+        </div>
+        <div id="result"></div>
+    </div>
+</div>
+</body>
+</html>

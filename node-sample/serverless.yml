@@ -1,0 +1,9 @@
+service: sls-sample
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+
+functions:
+  nodejs:
+    handler: handler.hello
