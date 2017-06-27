@@ -6,7 +6,7 @@ import org.specs2.specification.Scope
 
 class ServiceSpec extends Specification {
 
-  class Service extends ServiceImpl with MixInSlackMock  //依存性の注入
+  class Service extends ServiceInterface with MixInSlackMock  //依存性の注入
   trait context extends Scope {
       val service = new Service
   }
