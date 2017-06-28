@@ -12,3 +12,15 @@ sls package --package sample
 sbt assembly
 sls deploy -v
 ```
+
+
+MEMO
+https://bramp.github.io/js-sequence-diagrams/
+```
+ApiGateway-->Lambda:HTTP GET 
+Lambda-->Service:GET(HelloRequest)
+Service->Slack:POST(meesage)
+Service->>Lambda:Response
+Lambda->>ApiGateway: HTTP
+
+```
